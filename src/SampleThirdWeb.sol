@@ -19,4 +19,9 @@ contract SampleThirdWeb is ERC721Drop {
             _primarySaleRecipient
         )
     {}
+
+    function mint(address _to, uint256 _amount) external {
+        require(_amount > 0, "You must atleast mint more than zero tokens");
+        _safeMint(_to, _amount);
+    }
 }
